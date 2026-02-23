@@ -1,5 +1,4 @@
 [build]
-  base = "webroot"
-  command = "npm run build"
-  publish = "./.svelte-kit/output/client"
-  functions = "./.svelte-kit/output/server"
+	command = "npm run build"
+	publish = "build"
+	base = "/"
