@@ -1,20 +1,19 @@
 import { fail, redirect } from '@sveltejs/kit'
 import type { Actions, PageServerLoad } from './$types'
-import type { Team, sport } from '$lib/types';
 
 export const load: PageServerLoad = async ( { params, locals: { supabase } } ) => {
-	const { data, error } = await supabase.from( 'sports' )
+	const { data: sports, error } = await supabase.from( 'sports' )
 		.select( 'id, name' )
 		.order( 'name' );
 
 	if ( error ) {
-		console.error( 'Error loading teams:', teamsError );
+		console.error( 'Error loading sports:', sportsError );
 
-		return { sports: [] as Sport[] };
+		return { sports: [] };
 	}
 
 	if ( params.id != 'add' ) {
-		const { data, error } = await supabase.from( 'sports' )
+		const { data: sports, error } = await supabase.from( 'sports' )
 			.select( 'id, name' )
 			.eq( 'id', params.id )
 			.single();
@@ -23,17 +22,17 @@ export const load: PageServerLoad = async ( { params, locals: { supabase } } ) =
 			console.error( 'Error loading sport:', error );
 
 			return {
-				sports: data || []
+				sports: sports || []
 			};
 		}
 
 		return {
-			sports: data || []
+			sports: sports || []
 		};
 	}
 
 	return {
-		sports: data || []
+		sports: null
 	};
 }
 

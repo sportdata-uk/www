@@ -5,7 +5,7 @@
 	export let form: ActionData;
 </script>
 
-<h1>{ data.sports.id ? 'Update' : 'Add' } Sport</h1>
+<h1>{ data.sports ? 'Update' : 'Add' } Sport</h1>
 
 {#if form?.error}
 	<p class="error">{ form.error }</p>
@@ -18,7 +18,7 @@
 				<input id="name" name="name" type="text" value={ data.sports?.name || '' } required/>
 			</label>
 
-			<button>{ data.sports.id ? 'Update' : 'Add' } sport</button>
+			<button>{ data.sports ? 'Update' : 'Add' } sport</button>
 			<a href="/admin/sports/" class="button outline">cancel</a>
 		</form>
 	</div>

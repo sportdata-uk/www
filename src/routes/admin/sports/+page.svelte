@@ -29,7 +29,7 @@
 			<table>
 				<thead>
 					<tr>
-						<th>Name</th>
+						<th>Sport</th>
 						<th>&nbsp;</th>
 					</tr>
 				</thead>
