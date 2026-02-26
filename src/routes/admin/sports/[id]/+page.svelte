@@ -5,17 +5,22 @@
 	export let form: ActionData;
 </script>
 
-<h1>{ data.sports ? 'Update' : 'Add' } Sport</h1>
+<h1>{ data.sports.id ? 'Update' : 'Add' } Sport</h1>
 
 {#if form?.error}
 	<p class="error">{ form.error }</p>
 {/if}
 
-<form action="?/update" method="POST">
-	<label for="name">Name</label>
-	<input id="name" name="name" type="text" value={ data.sports?.name || '' } >
+<div class="row">
+	<div class="col-8 offset-2">
+		<form action="?/update" method="POST">
+			<label for="name">Name *
+				<input id="name" name="name" type="text" value={ data.sports?.name || '' } required/>
+			</label>
 
-	<br>
-	<button>{data.sports ? 'Update' : 'Add'} sport</button>
-	<a href="/admin/sports/">cancel</a>
-</form>
+			<br>
+			<button>{ data.sports.id ? 'Update' : 'Add' } sport</button>
+			<a href="/admin/sports/" class="button outline">cancel</a>
+		</form>
+	</div>
+</div>
