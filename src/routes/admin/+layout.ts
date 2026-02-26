@@ -1,4 +1,4 @@
-import type { LayoutLoad } from './$types';
+/* import type { LayoutLoad } from './$types';
 
 export const load: LayoutLoad = () => {
 	return {
@@ -11,4 +11,4 @@ export const load: LayoutLoad = () => {
 			{ slug: 'teams', title: 'Teams' },
 		]
 	};
-};
+}; */

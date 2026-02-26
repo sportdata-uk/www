@@ -16,4 +16,4 @@
 
 <h1>Admin Dashboard</h1>
 <p>Logged in as: {data.user.email}</p>
-<button on:click={signout}>Sign out</button>
+<button onclick={signout}>Sign out</button>

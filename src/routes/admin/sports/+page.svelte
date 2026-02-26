@@ -21,26 +21,32 @@
 
 <h1>Sports</h1>
 
-<p><a href="/admin/sports/add/" class="button">Add Sport</a></p>
+<a href="/admin/sports/add/" class="button">Add Sport</a>
 
-<table>
-	<thead>
-		<tr>
-			<th>Name</th>
-			<th>&nbsp;</th>
-		</tr>
-	</thead>
+<div class="row">
+	<div class="col-8 offset-2">
+		<div class="table">
+			<table>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>&nbsp;</th>
+					</tr>
+				</thead>
 
-	<tbody>
-		{#each data.sports as sport}
-			<tr>
-				<td>
-					<a href="/admin/sports/{ sport.id }">{ sport.name }</a>
-				</td>
-				<td>
-					<button onclick={ () => deleteRecord( sport ) }>Delete</button>
-				</td>
-			</tr>
-		{/each}
-	</tbody>
-</table>
+				<tbody>
+					{#each data.sports as sport}
+						<tr>
+							<td>
+								<a href="/admin/sports/{ sport.id }">{ sport.name }</a>
+							</td>
+							<td class="align-right">
+								<button onclick={ () => deleteRecord( sport ) }>Delete</button>
+							</td>
+						</tr>
+					{/each}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
