@@ -5,7 +5,7 @@ export const load: PageServerLoad = async ( { locals: { supabase } } ) => {
 	let now = new Date();
 
 	const { data } = await supabase.from( 'organisations' )
-		.select( 'id, name, sports( id, name )' )
+		.select( 'id, name, sport:sports( id, name )' )
 		.order( 'name', { ascending: true } );
 
 	return { organisations: data ?? [] }

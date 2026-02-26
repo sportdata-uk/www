@@ -41,7 +41,7 @@
 							<td>
 								<a href="/admin/organisations/{ organisation.id }">{ organisation.name }</a>
 							</td>
-							<td>{ organisation.sports.name }</td>
+							<td>{ organisation.sport.name }</td>
 							<td class="align-right">
 								<button onclick={ () => deleteRecord( organisation ) }>Delete</button>
 							</td>
