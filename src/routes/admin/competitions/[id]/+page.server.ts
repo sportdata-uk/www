@@ -3,7 +3,7 @@ import type { Actions, PageServerLoad } from './$types'
 
 export const load: PageServerLoad = async ( { params, locals: { supabase } } ) => {
 	const { data: seasons, errorSeasons } = await supabase.from( 'seasons' )
-		.select( 'id, name' )
+		.select( 'id, name, organisation:organisations( name )' )
 		.order( 'name' );
 
 	if ( errorSeasons ) {

@@ -30,7 +30,7 @@
 				<thead>
 					<tr>
 						<th>Competition</th>
-						<th>Season</th>
+						<th>Organisation > Season</th>
 						<th>&nbsp;</th>
 					</tr>
 				</thead>
@@ -41,7 +41,7 @@
 							<td>
 								<a href="/admin/competitions/{ competition.id }">{ competition.name }</a>
 							</td>
-							<td>{ competition.season.name }</td>
+							<td>{ competition.season.organisation.name } - { competition.season.name } </td>
 							<td class="align-right">
 								<button onclick={ () => deleteRecord( competition ) }>Delete</button>
 							</td>

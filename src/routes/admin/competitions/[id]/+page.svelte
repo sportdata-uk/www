@@ -19,13 +19,13 @@
 			</label>
 
 			<div data-field>
-				<label for="season">Season *
+				<label for="season">Organisation > Season *
 					<select name="seasonID" aria-label="Select an option">
 						<option value="">Select a Season...</option>
 
 						{#each data.seasons as season}
 							<option value={ season.id } selected={ data.competition?.season_id === season.id }>
-								{ season.name }
+								{ season.organisation.name } - { season.name } 
 							</option>
 						{/each}
 					</select>
