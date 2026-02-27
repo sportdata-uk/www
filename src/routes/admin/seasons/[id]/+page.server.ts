@@ -14,7 +14,7 @@ export const load: PageServerLoad = async ( { params, locals: { supabase } } ) =
 
 	if ( params.id != 'add' ) {
 		const { data: season, error } = await supabase.from( 'seasons' )
-			.select( 'id, name, organisation_id' )
+			.select( 'id, name, organisation_id, start_date, end_date' )
 			.eq( 'id', params.id )
 			.single();
 
@@ -42,12 +42,16 @@ export const actions: Actions = {
 
 		const name = formData.get( 'name' ) as string
 		const organisationID = formData.get( 'organisationID' ) as string
+		const startDate = formData.get( 'startDate' ) as string
+		const endDate = formData.get( 'endDate' ) as string
 
 		const { id } = params;
 
 		const seasonData = {
 			name: name as string,
 			organisation_id: organisationID as string,
+			start_date: startDate as string,
+			end_date: endDate as string,
 		};
 
 		if ( id === 'add' ) {

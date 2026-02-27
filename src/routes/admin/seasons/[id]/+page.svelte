@@ -34,13 +34,13 @@
 
 			<div data-field>
 				<label for="startDate">Start date *
-					<input id="startDate" name="startDate" type="date" value={ data.season?.startDate || '' } required/>
+					<input id="startDate" name="startDate" type="date" value={ data.season?.start_date || '' } required/>
 				</label>
 			</div>
 
 			<div data-field>
 				<label for="endDate">End date *
-					<input id="endDate" name="endDate" type="date" value={ data.season?.endDate || '' } required/>
+					<input id="endDate" name="endDate" type="date" value={ data.season?.end_date || '' } required/>
 				</label>
 			</div>
 
