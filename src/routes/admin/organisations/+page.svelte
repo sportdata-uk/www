@@ -1,4 +1,6 @@
 <script>
+	import { enhance } from '$app/forms';
+
 	let { data } = $props();
 
 	async function deleteRecord( record ) {
@@ -19,7 +21,23 @@
 	}
 </script>
 
-<h1>Organisations</h1>
+<div class="hstack gap-4">
+	<div>
+		<h1>Organisations</h1>
+	</div>
+
+	<div class="mb-4">
+		<form action="?/selectedSport" method="POST" use:enhance>
+			<select name="selectedSport" value={data.selectedSport} onchange={(e) => e.currentTarget.form.submit()}>
+				<option value="all">Select a Sport</option>
+				<option value="all">All Sports</option>
+				{#each data.sports as sport}
+					<option value="{ sport.id }">{ sport.name }</option>
+				{/each}
+			</select>
+		</form>
+	</div>
+</div>
 
 <a href="/admin/organisations/add/" class="button">Add Organisation</a>
 
